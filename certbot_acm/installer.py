@@ -14,6 +14,7 @@ from certbot.plugins import common
 
 
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 
 
 @zope.interface.implementer(interfaces.IInstaller)
