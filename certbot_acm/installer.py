@@ -24,6 +24,7 @@ class Installer(common.Plugin):
     description = "ACM installer"
 
     def __init__(self, *args, **kwargs):
+        logger.error("THIS IS AN ERROR IN THE CONSTRUCTOR")
         super(Installer, self).__init__(*args, **kwargs)
 
     def get_all_names(self):
@@ -54,6 +55,7 @@ class Installer(common.Plugin):
         pass
 
     def restart(self):
+        logger.error("THIS IS AN ERROR IN RESTART")
         for domain in self.config.domains:
             logger.info("Renew domain: "+domain)
             cert_path = os.path.join(
@@ -85,6 +87,7 @@ class Installer(common.Plugin):
         """
         Upload Certificate to ACM
         """
+        logger.error("THIS IS AN ERROR IN DEPLOY CERT")
         acm_client = boto3.client('acm')
 
         certificate = {
